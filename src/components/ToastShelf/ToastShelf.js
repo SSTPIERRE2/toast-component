@@ -14,9 +14,11 @@ function ToastShelf() {
       aria-live="assertive"
       aria-label="Notification"
     >
-      {toasts.map((toast) => (
-        <li key={toast.id} className={styles.toastWrapper}>
-          <Toast toast={toast} />
+      {toasts.map(({ id, variant, message }) => (
+        <li key={id} className={styles.toastWrapper}>
+          <Toast id={id} variant={variant}>
+            {message}
+          </Toast>
         </li>
       ))}
     </ol>
